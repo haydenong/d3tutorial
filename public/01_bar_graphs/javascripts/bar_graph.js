@@ -69,7 +69,8 @@
 
     function init(_data) {
         // Setup group divs
-        groups = d3.select('div#graph-01').selectAll('div.bar-group')
+        groups = d3.select('div#graph-01')
+            .selectAll('div.bar-group')
             .data(_data)
             .enter().append('div')
             .attr('class', 'bar-group');
@@ -92,7 +93,8 @@
             });
 
         // Handle the event separately as we will be editing the bars
-        bars.enter().append('div')
+        bars.enter()
+            .append('div')
             .attr('class', 'bar');
 
         update(_data);
